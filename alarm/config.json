@@ -1,0 +1,42 @@
+{
+  "list_random_alarm": {
+    "p_str_start_datetime": "2020-10-01 00:00:00",
+    "p_str_end_datetime": "2020-10-01 16:00:00",
+    "p_str_application": "转账交易",
+    "p_list_severity": [1, 2, 3],
+    "p_list_host": ["192.168.101.11", "192.168.101.12", "192.168.101.13", "192.168.101.14"],
+    "p_int_interval": 60
+  },
+  "list_root_cause_alarm": {
+    "p_str_start_datetime": "2020-10-01 10:10:10",
+    "p_str_end_datetime": "2020-10-01 14:10:10",
+    "p_str_application": "转账交易",
+    "p_list_severity": [4],
+    "p_list_host": ["192.168.101.11"],
+    "p_int_interval": 60
+  },
+  "list_efficient_alarm": {
+    "p_str_start_datetime": "2020-10-01 10:14:10",
+    "p_str_end_datetime": "2020-10-01 14:10:10",
+    "p_str_application": "转账交易",
+    "p_list_severity": [4],
+    "p_list_host": ["192.168.101.11"],
+    "p_int_interval": 60
+  },
+  "list_infect_infrastructure_alarm": {
+    "p_str_start_datetime": "2020-10-01 10:16:10",
+    "p_str_end_datetime": "2020-10-01 14:10:10",
+    "p_str_application": "转账交易",
+    "p_list_severity": [3],
+    "p_list_host": ["192.168.101.12", "192.168.101.13"],
+    "p_int_interval": 60
+  },
+  "list_infect_transaction_alarm": {
+    "p_str_start_datetime": "2020-10-01 10:16:10",
+    "p_str_end_datetime": "2020-10-01 14:10:10",
+    "p_str_application": "转账交易",
+    "p_list_severity": [4],
+    "p_list_host": ["192.168.101.14"],
+    "p_int_interval": 60
+  }
+}

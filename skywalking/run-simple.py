@@ -147,19 +147,13 @@ def generate_traces():
         trace_num = request.json.get("traceNum", 10)  # 生成 X 个 trace
         # 生成 X 个 trace 的过程
         list_servers = list(GenerateData.config.keys())  # 获取所有的服务
-        weights = [trace_num for _ in range(len(list_servers))]
+        # weights = [trace_num for _ in range(len(list_servers))]
         while trace_num:
-            span_num = random.randint(5, 10)
+            span_num = random.randint(5, 7)
             trace = []
             while span_num:  # trace 的长度为所有的服务长度
-                server = random.choices(list_servers, weights=weights)[0]  # 随机选择某个服务
-                # list_servers.remove(server)  # 将该服务从服务列表中删除，表示这个服务节点已经执行过，不需要再次执行
-
-                index = list_servers.index(server)
-                weights[index] -= 1  # 降低该服务的权重
-                if weights[index] <= 1:
-                    weights[index] = 1
-
+                server = random.choice(list_servers)  # 随机选择某个服务
+                list_servers.remove(server)  # 将该服务从服务列表中删除，表示这个服务节点已经执行过，不需要再次执行
                 ins = random.choice(list(GenerateData.config[server].keys()))  # 随机选取该服务下的某个实例
                 endpoint = random.choice(list(GenerateData.config[server][ins].keys()))  # 随机选取该实例下的某个端点
                 trace.append("%s@%s@%s" % (server, ins, endpoint))  # 服务@实例@端点 组装成一个 span

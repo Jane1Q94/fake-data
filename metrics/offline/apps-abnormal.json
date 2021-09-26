@@ -1,0 +1,56 @@
+{
+  "apps": [
+    {
+      "name": "核心交易系统",
+      "metrics": [
+        {
+          "name": "transTotal",
+          "type": "transaction",
+          "factor": 1000,
+          "noise": 0.14
+        },
+        {
+          "name": "transSuccessRate",
+          "type": "machine",
+          "factor": 0.6,
+          "noise": 0.14
+        },
+        {
+          "name": "transDelay",
+          "type": "machine",
+          "factor": 1500,
+          "noise": 0.14
+        }
+      ]
+    },
+    {
+      "name": "核心数据库系统",
+      "metrics": [
+        {
+          "name": "connection count",
+          "type": "machine",
+          "factor": 550,
+          "noise": 0.14
+        },
+        {
+          "name": "lock wait",
+          "type": "machine",
+          "factor": 500,
+          "noise": 0.14
+        },
+        {
+          "name": "cpu",
+          "type": "machine",
+          "factor": 95,
+          "noise": 0.14
+        },
+        {
+          "name": "mem",
+          "type": "machine",
+          "factor": 85,
+          "noise": 0.14
+        }
+      ]
+    }
+  ]
+}

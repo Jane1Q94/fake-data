@@ -2,92 +2,60 @@ import time
 
 import requests
 
-url = "http://127.0.0.1:5000/generate/config"
-payload = {
-}
-response = requests.post(url=url, json=payload)
-print(response.json())
-print("-" * 160)
+serverInsNum = 10
+serverEndPointNum = 10
 
-url = "http://127.0.0.1:5000/get/config"
+# url = "http://192.168.102.10:5001/generate/config"
+# payload = {
+#     "serverNum": 100
+# }
+# response = requests.post(url=url, json=payload)
+# print(response.json())
+# print("-" * 160)
+#
+# url = "http://192.168.102.10:5001/generate/traces"
+# payload = {
+#     "traceNum": 10
+# }
+# response = requests.post(url=url, json=payload)
+# print(response.json())
+# print("-" * 160)
+#
+# url = "http://192.168.102.10:5001/get/config"
+# response = requests.get(url=url)
+# print(response.json())
+# print("-" * 160)
+
+url = "http://192.168.102.10:5001/get/traces"
 response = requests.get(url=url)
 print(response.json())
 print("-" * 160)
 
-url = "http://127.0.0.1:5000/generate/traces"
-response = requests.post(url=url, json=payload)
-print(response.json())
-print("-" * 160)
-
-url = "http://127.0.0.1:5000/get/traces"
-response = requests.get(url=url)
-print(response.json())
-print("-" * 160)
-
-url = "http://127.0.0.1:5000/get/speed"
-response = requests.get(url=url)
-print(response.json())
-print("-" * 160)
-
-url = "http://127.0.0.1:5000/stop"
-payload = {
-    "exp": "len(cls.traces)==10"
-}
-response = requests.post(url=url, json=payload)
-print(response.json())
-print("-" * 160)
-
-url = "http://127.0.0.1:5000/update/traces/del"
-payload = {}
-response = requests.post(url=url, json=payload)
-print(response.json())
-print("-" * 160)
-
-url = "http://127.0.0.1:5000/get/traces"
-response = requests.get(url=url)
-print(response.json())
-print("-" * 160)
-
-url = "http://127.0.0.1:5000/update/traces/add"
-payload = {}
-response = requests.post(url=url, json=payload)
-print(response.json())
-print("-" * 160)
-
-url = "http://127.0.0.1:5000/get/traces"
-response = requests.get(url=url)
-print(response.json())
-print("-" * 160)
-
-url = "http://127.0.0.1:5000/start"
-payload = {
-    "speed": 100000
-}
-response = requests.post(url=url, json=payload)
-print(response.json())
-print("-" * 160)
-
-# url = "http://127.0.0.1:5000/start"
+# url = "http://192.168.102.10:5001/start"
 # payload = {}
 # response = requests.post(url=url, json=payload)
 # print(response.json())
 # print("-" * 160)
+#
+# url = "http://192.168.102.10:5001/output"
+# payload = {
+#     "address": "192.168.101.11:9092",
+#     "topic": "skywalking-11"
+# }
+# response = requests.post(url=url, json=payload)
+# print(response.json())
+# print("-" * 160)
 
-time.sleep(4)
 
-url = "http://127.0.0.1:5000/get/speed"
-response = requests.get(url=url)
-print(response.json())
-print("-" * 160)
-
-time.sleep(4)
-url = "http://127.0.0.1:5000/stop"
-payload = {}
+endpoint = 'engineer innovative networks@122.192.225.85@explore/explore/tag/tag'
+# endpoint = "unleash dot-com niches@181.133.137.252@blog/search/categories/explore"
+url = "http://192.168.102.10:5001/update/delay"
+payload = {
+    "endpoint": endpoint,
+    "delay": [1000, 1500]
+}
 response = requests.post(url=url, json=payload)
 print(response.json())
 print("-" * 160)
 
-# url = "http://127.0.0.1:5000/get/speed"
-# response = requests.get(url=url)
-# print(response.json())
-# print("-" * 160)
+
